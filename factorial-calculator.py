@@ -10,19 +10,20 @@ logging.basicConfig(
 
 
 def fact(num):
-    logging.info("Calculating factorial of: {} ...".format(num))
+    logging.info(f"Calculating factorial of: {num} ...")
+    numbers = [i for i in range(abs(int(num)), 0, -1)]
     prd = 1
-    numbers = [i for i in range(1, abs(int(num)) + 1)]
     for i in numbers:
-        prd = prd * i
+        prd *= i
+
     if len(str(prd)) < 10:
         logging.info("Factorial is: {:,}".format(prd))
     else:
-        logging.info("Factorial is too long to display: ({} characters)".format(len(str(prd))))
+        logging.info("Factorial too long to display. ({} characters)".format(len(str(prd))))
     return prd
 
 
-number = input("Enter number to calculate factorial:\n")
-
-factorial = fact(number)
-print("The factorial is:\n{:,}".format(factorial))
+if __name__ == '__main__':
+    number = int(input("Enter number to calculate factorial:\n"))
+    factorial = fact(number)
+    print("The factorial is:\n{:,}".format(factorial))
