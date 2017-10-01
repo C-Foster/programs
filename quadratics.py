@@ -110,7 +110,7 @@ if __name__ == '__main__':
         if choice == 'run':
             main()
         # test mode: runs doctests
-        elif choice == 'test':
+        elif choice == '--test':
             import doctest
             result = doctest.testmod()
             logging.info(f'Running test.\n{result}')

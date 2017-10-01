@@ -14,6 +14,7 @@ logging.basicConfig(
 def main():
     """The main code of the program"""
 
+    # Generate list of random 4-digit length containing random numbers
     user_inputs = []
     for i in range(randint(1000, 9999)):
         user_inputs.append(randint(1, 999))
@@ -33,6 +34,7 @@ def main():
 def bubble_sort(input_list):
     """Returns the sorted version of a list of numbers
 
+    Doctests:
     >>> bubble_sort([15, 3, 5, 7, 12.5])
     [3, 5, 7, 12.5, 15]
     >>> bubble_sort([1.75, 1.25, 1.5, 3, 10, 0.56, 0.51])
@@ -48,9 +50,9 @@ def bubble_sort(input_list):
 
 if __name__ == '__main__':
     choice = ''
-    while choice != 'test' and choice != 'run':
+    while choice != '--test' and choice != 'run':
         choice = input('Test or run?\n').lower()
-    if choice == 'test':
+    if choice == '--test':
         import doctest
         result = doctest.testmod()
         logging.info(f'Running test.\n{result}')

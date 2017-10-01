@@ -17,12 +17,16 @@ def main():
     while user_input != 'STOP':
         user_input = input("Enter the string to cipher:\n(Enter 'STOP' to exit)\n")
         logging.info(f'User entered: "{user_input}"')
-        user_input = user_input.upper()
-        if user_input.strip(' ') == 'STOP':
+        user_input = user_input.upper().strip(' ')
+
+        # stop execution
+        if user_input == 'STOP':
             return
         else:
+            # remove punctuation
             for i in s.punctuation:
                 user_input = user_input.replace(i, '')
+
             logging.info(f'Formatted input: "{user_input}"')
             output = cipher(user_input)
             print(output)
@@ -52,21 +56,26 @@ def cipher(string):
         print(f"Unknown error: {oops} while converting.")
 
 
-upper_string = [i for i in s.ascii_uppercase]
-numbers = [str(i) for i in range(10)]
+upper_string = [i for i in s.ascii_uppercase]  # all uppercase letters, in order
+numbers = [str(i) for i in range(10)]  # 0 through 9 as strings
 
+# create list of characters forwards
 first_string = upper_string
 first_string.extend(numbers)
 
+# create list of characters in reverse
 second_string = upper_string[:-10]
 second_string.reverse()
 second_string.extend(reversed(numbers))
 
+# ensure both lists contain a space
 first_string.append(" ")
 second_string.append(" ")
 
+# reset contents of upper_string to contain only letters
 upper_string = upper_string[:-11]
 
+# map each character to corresponding character in the reversed list
 cipher_dict = dict(zip(first_string, second_string))
 
 if __name__ == '__main__':

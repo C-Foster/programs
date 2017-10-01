@@ -1,3 +1,4 @@
+import doctest
 import logging
 
 logging.basicConfig(
@@ -9,21 +10,45 @@ logging.basicConfig(
 )
 
 
-def fact(num):
+def calculate_factorial(num):
+    """Returns the factorial of a given integer, num
+
+    Doctests:
+    >>> calculate_factorial(3)
+    6
+    >>> calculate_factorial(5)
+    120
+    >>> calculate_factorial(6)
+    720
+    >>> calculate_factorial(13)
+    6227020800
+    """
+
     logging.info(f"Calculating factorial of: {num} ...")
     numbers = [i for i in range(abs(int(num)), 0, -1)]
     prd = 1
     for i in numbers:
         prd *= i
-
-    if len(str(prd)) < 10:
-        logging.info("Factorial is: {:,}".format(prd))
-    else:
-        logging.info("Factorial too long to display. ({} characters)".format(len(str(prd))))
     return prd
 
 
 if __name__ == '__main__':
-    number = int(input("Enter number to calculate factorial:\n"))
-    factorial = fact(number)
-    print("The factorial is:\n{:,}".format(factorial))
+    user_input = ''
+    while user_input != 'stop':
+        user_input = input(
+            'Enter number to calculate factorial:\n'
+            '(Enter "stop" to exit)\n'
+        )
+
+        if user_input == 'stop':
+            break
+        elif user_input == '--test':
+            result = doctest.testmod()
+            logging.info(result)
+        else:
+            output = calculate_factorial(user_input)
+            if len(str(output)) < 10:
+                logging.info("Factorial is: {:,}".format(output))
+            else:
+                logging.info("Factorial too long to display. ({} characters)".format(len(str(output))))
+            print("The factorial is:\n{:,}".format(output))

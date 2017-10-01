@@ -10,6 +10,7 @@ while operation != "to" and operation != "from":
 print("Enter the string to convert:")
 string = input().upper()
 
+# performs appropriate conversion based on user input
 result = morse.convert_to(string) if operation == "to" else morse.convert_from(string)
 
 print(result)
