@@ -58,6 +58,7 @@ def verify(var1, var2, var3):
 
 def calc(a, b, c):
     """Returns the roots of a quadratic equation of the form 'Ax^2 + Bx + C' (if any)
+    Can handle complex roots
 
     >>> calc(1, 6, 8)
     'x = -2.0, x = -4.0'
