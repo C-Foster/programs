@@ -36,6 +36,7 @@ def main():
 def cipher(string):
     """Ciphers a string passed as an argument. Returns the ciphered string
 
+    Doctests:
     >>> cipher('HELLO')
     'SVOOL'
     >>> cipher('DOVAHKIIN')

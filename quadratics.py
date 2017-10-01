@@ -60,6 +60,7 @@ def calc(a, b, c):
     """Returns the roots of a quadratic equation of the form 'Ax^2 + Bx + C' (if any)
     Can handle complex roots
 
+    Doctests:
     >>> calc(1, 6, 8)
     'x = -2.0, x = -4.0'
     >>> calc(1, -6, 8)

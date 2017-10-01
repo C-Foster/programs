@@ -49,6 +49,7 @@ def convert_to(a_string):
 def convert_from(a_string):
     """Returns the English equivalent of argument 'a_string'
 
+    Doctests:
     >>> convert_from(".... . .-.. .-.. ---")
     'HELLO'
     >>> convert_from("-.. --- ...- .- .... -.- .. .. -.")
