@@ -2,6 +2,7 @@ fibonacci = {}
 
 
 def fib(n):
+    value = None
     if n in fibonacci:
         return fibonacci[n]
 
@@ -16,5 +17,6 @@ def fib(n):
     return value
 
 
-for i in range(1, 101):
-    print('{}: {:,}'.format(i, fib(i)))
+if __name__ == '__main__':
+    for i in range(1, 101):
+        print('{}: {:,}'.format(i, fib(i)))
