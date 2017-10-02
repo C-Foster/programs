@@ -17,6 +17,8 @@ def convert_to(a_string):
     '.... . .-.. .-.. --- '
     >>> convert_to('DOVAHKIIN')
     '-.. --- ...- .- .... -.- .. .. -. '
+    >>> convert_to('HELLO THERE')
+    '.... . .-.. .-.. --- | - .... . .-. . '
     """
 
     try:
@@ -54,6 +56,8 @@ def convert_from(a_string):
     'HELLO'
     >>> convert_from("-.. --- ...- .- .... -.- .. .. -.")
     'DOVAHKIIN'
+    >>> convert_from(".... . .-.. .-.. --- | - .... . .-. .")
+    'HELLO THERE'
     """
 
     try:
@@ -129,7 +133,6 @@ alpha_dict, morse_dict = dict(zip(morse_list, alpha_list)), dict(zip(alpha_list,
 
 if __name__ == '__main__':
     import doctest
-
     result = doctest.testmod()
     logging.info(result)
     print(result)
