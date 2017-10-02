@@ -41,7 +41,7 @@ def convert_to(a_string):
         converted = ''.join(string_list)
         return converted
     except KeyError as e:
-        print("Dictionary error:", e, "in Morse.convert_to()")
+        print("Key error:", e, "in Morse.convert_to()")
     except IndexError as e:
         print("Index error:", e, "in Morse.convert_to()")
     except Exception as e:
@@ -88,7 +88,7 @@ def convert_from(a_string):
         converted = ''.join(string_list)
         return converted
     except KeyError as e:
-        print("Dictionary error:", e, "in Morse.convert_from()")
+        print("Key error:", e, "in Morse.convert_from()")
     except IndexError as e:
         print("Index error:", e, "in Morse.convert_from()")
     except Exception as e:
@@ -100,33 +100,35 @@ alpha_list = [i for i in string.ascii_uppercase] + [" "]
 
 # create list of all morse code characters, alphabetical order
 # space == |
-morse_list = [".-",
-              "-...",
-              "-.-.",
-              "-..",
-              ".",
-              "..-.",
-              "--.",
-              "....",
-              "..",
-              ".---",
-              "-.-",
-              ".-..",
-              "--",
-              "-.",
-              "---",
-              ".--.",
-              "--.-",
-              ".-.",
-              "...",
-              "-",
-              "..-",
-              "...-",
-              ".--",
-              "-..-",
-              "-.--",
-              "--..",
-              "|"]
+morse_list = [
+    ".-",
+    "-...",
+    "-.-.",
+    "-..",
+    ".",
+    "..-.",
+    "--.",
+    "....",
+    "..",
+    ".---",
+    "-.-",
+    ".-..",
+    "--",
+    "-.",
+    "---",
+    ".--.",
+    "--.-",
+    ".-.",
+    "...",
+    "-",
+    "..-",
+    "...-",
+    ".--",
+    "-..-",
+    "-.--",
+    "--..",
+    "|"
+]
 
 # create dictionaries mapping alphabet characters to morse code and vice versa
 alpha_dict, morse_dict = dict(zip(morse_list, alpha_list)), dict(zip(alpha_list, morse_list))
