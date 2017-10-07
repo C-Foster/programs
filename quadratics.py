@@ -1,6 +1,6 @@
 import logging
-from math import sqrt as root
 from cmath import sqrt as complex_root
+from math import sqrt as root
 
 logging.basicConfig(
     level=logging.INFO,
@@ -12,13 +12,10 @@ logging.basicConfig(
 
 
 def main():
-    my_vars = []
     var_a = input("Enter the value of A:\n")
-    my_vars.append(var_a)
     var_b = input("Enter the value of B:\n")
-    my_vars.append(var_b)
     var_c = input("Enter the value of C:\n")
-    my_vars.append(var_c)
+    my_vars = (var_a, var_b, var_c)
 
     # stops execution of the program if any inputs are left blank
     for var in my_vars:
@@ -107,7 +104,7 @@ def calc(a, b, c):
 if __name__ == '__main__':
     choice = ''
     while choice != 'stop':
-        choice = input('Do you want to run again or stop?').lower()
+        choice = input('Do you want to run stop?').lower()
         if choice == 'run':
             main()
         # test mode: runs doctests
