@@ -31,6 +31,7 @@ def main():
         logging.info(f'Numbers entered: A: {var_a}, B: {var_b}, C: {var_c}')
         logging.info(output)
         print(output)
+        print()
 
 
 def verify(var1, var2, var3):
