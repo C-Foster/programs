@@ -16,7 +16,7 @@ for x in x_array:
 # plot data
 plt.plot(x_array, y_array, label="graph")  # plots the graph of the function
 plt.plot([max(x_array), min(x_array)], [0, 0], label="x-axis")  # plots the x-axis
-plt.plot([0, 0], [max(y_array), min(y_array) - (max(y_array) / 2)], label="y-axis")  # plots the y-axis
+plt.plot([0, 0], [max(y_array), -(max(y_array))], label="y-axis")  # plots the y-axis
 
 # configure graph
 plt.title(f"Graph of f(x) = {a}x^2 + {b}x + {c}")
