@@ -105,7 +105,7 @@ def calc(a, b, c):
 if __name__ == '__main__':
     choice = ''
     while choice != 'stop':
-        choice = input('Do you want to run stop?').lower()
+        choice = input('Do you want to run or stop?').lower()
         if choice == 'run':
             main()
         # test mode: runs doctests
